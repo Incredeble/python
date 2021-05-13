@@ -1,16 +1,14 @@
 from flask import Flask,request,jsonify
-from flask_cors import CORS
 
 
 app = Flask(__name__)
-CORS(app=app)
 
-@app.route('/api',methods=['GET'])
+@app.route('/api',methods=['POST'])
 
-def hello_world():
-    d={}
-    d['Query'] = str(request.args['Query'])
-    return jsonify(d)
+def response():
+    query = dict(request.form(['query']))
+    result = query
+    return jsonify({'response' : result})
 
 
 if __name__ == '__main__':
