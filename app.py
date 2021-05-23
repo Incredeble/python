@@ -11,6 +11,6 @@ def response():
         #query = dict(request.form)["query"]
         #return jsonify({"response" : query})
         return jsonify({"response" : 'hi this is python'})
-    error:
+    except:
         return jsonify({"response" : 'hi this is python'})
 
