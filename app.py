@@ -1,7 +1,8 @@
-from flask import Flask,request,jsonify
+import flask
+from flask import request,jsonify
 
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 # @app.route("/api",method=["POST"])
 @app.route("/",methods=["GET"])
@@ -13,7 +14,3 @@ def response():
     error:
         return jsonify({"response" : 'hi this is python'})
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
-    
